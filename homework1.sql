@@ -33,12 +33,12 @@ create table MyRestaurant (name varchar, distance int, lastVisit varchar, enjoy 
 /* Problem 3 */
 /* Insert at least 5 tuples using Insert, 1 you like, 1 you do not like 
 and at least where you leave the iLike field null*/
-insert into MyRestaurant vales('huyle', '20', '05-01-2014',0 );
-insert into MyRestaurant vales('OanhBui', '10', '06-01-2014',1 );
-insert into MyRestaurant vales('huyle', '15', '07-01-2014',0 );
-insert into MyRestaurant vales('huyle', '10', '08-01-2014',1 );
-insert into MyRestaurant vales('huyle', '20', '09-01-2014',0 );
-insert into MyRestaurant vales('huyle', '10', '010-01-2014',null);
+insert into MyRestaurant vales('huyle', '20', '2014-05-01',0 );
+insert into MyRestaurant vales('OanhBui', '10', '2014-06-21',1 );
+insert into MyRestaurant vales('nigga', '15', '2014-07-11',0 );
+insert into MyRestaurant vales('KhoiNguyen', '10', '2014-08-25',1 );
+insert into MyRestaurant vales('Barrack Obama', '20', '2014-09-24',0 );
+insert into MyRestaurant vales('Tryndamere Amumu', '10', '2014-10-09',null);
 
 /* problem 4 */
 /* return all restaurant in your table */
@@ -75,3 +75,5 @@ MyRestaurant.enjoy = LikeItOrNot.LikeIt;
 /*Problem 7 */
 /* Write a SQL query that returns all restaurant that you like, and have not visited since more
 3 months ago */
+
+select * from MyRestaurant where enjoy = 1 and lastVisit < (select date ('now', '-3 month', '-0 day'));
