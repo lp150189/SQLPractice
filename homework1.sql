@@ -57,12 +57,13 @@ select * from MyRestaurant;
 select * from MyRestaurant;
 
 /* Problem 6 */
-/* Modify your SQL query such that it prints "I liked it" or "I hated it"
+/* Modify your SQL query such that it pri.nts "I liked it" or "I hated it"
  for each restaurant you liked or not. Note that you are not allowed to modify 
  the table on disk. You should be able to answer this question using only a SELECT statement. 
 A solution that creates and uses an extra table, however, will be accepted. */
 create table LikeItOrNot(
-	Foreign key (LikeIt) references MyRestaurant(enjoy);
+	LikeIt int,
+	Foreign key (LikeslesIt) references MyRestaurant(enjoy);
 	LikeItString TEXT
 
 );
